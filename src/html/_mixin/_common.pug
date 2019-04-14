@@ -1,0 +1,26 @@
+mixin picture(srcArray)
+  picture(
+    class != attributes.class
+  )
+    if (srcArray[2])
+      source(
+        media = '(min-width: 569px) and (max-width: 1024px)',
+        srcset = srcArray[2]
+        )
+    if (srcArray[1])
+      source(
+        media = '(max-width: 568px)',
+        srcset = srcArray[1]
+        )
+    img(
+      src = srcArray[0],
+      alt = (attributes.alt) ? attributes.alt : ''
+    )
+
+mixin splitStr(str)
+  - var strArr = str.split('');
+  - for (var i = 0; i < strArr.length; i++) {
+    - var typo = (strArr[i] == ' ') ? '&nbsp;' : strArr[i];
+    span(class='c-split-str')&attributes(attributes)
+      |!{typo}
+  - }

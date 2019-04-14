@@ -1,0 +1,5 @@
+.l-contents {
+  line-height: 2;
+  color: $color-text;
+  @include fontSizeAll(14, 14, 12);
+}

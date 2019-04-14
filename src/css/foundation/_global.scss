@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  overflow-y: scroll;
+  font-family: $font-ja;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // font-feature-settings: 'palt';
+}
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+p, ul, ol, dl {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+ul, ol {
+  padding-left: 2em;
+}
+img {
+  vertical-align: top;
+}
+input[type=text], input[type=password], input[type=email],
+input[type=tel], input[type=search], input[type=url], input[type=number],
+input[type=submit], button, select, textarea {
+  appearance: none;
+  border-radius: 0;
+}
+input[type=submit], button {
+  border: 0;
+}
+input[type=text], input[type=password], input[type=email],
+input[type=tel], input[type=search], input[type=url], input[type=number],
+select, textarea {
+  background-color: #fff;
+}
+select::-ms-expand {
+  display: none;
+}
+::selection {
+  color: #fff;
+  background-color: rgba(#000, 0.8);
+}
+input::selection,
+textarea::selection {
+  color: $color-text;
+  background-color: rgba(#000, 0.2);
+}
+::-webkit-input-placeholder {
+  color: #666;
+}
+::-moz-placeholder {
+  color: #666;
+}
+:-ms-input-placeholder {
+  color: #666;
+}

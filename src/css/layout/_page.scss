@@ -1,0 +1,7 @@
+.l-page {
+  overflow: hidden;
+  visibility: visible;
+  @include l-more-than-mobile {
+    min-width: $break-point-tablet-l;
+  }
+}
