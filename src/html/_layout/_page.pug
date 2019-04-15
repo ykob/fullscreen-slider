@@ -13,8 +13,6 @@ html(lang="ja")
     .l-page(data-page-id=page.id)
       include ./_global.pug
       .l-contents
-        // Start to define the main content.
         block content
-        // End to define the main content.
     block script
     script(src=`${data.meta.path}/js/main.js` async)
