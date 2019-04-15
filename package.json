@@ -55,6 +55,7 @@
     "easing-js": "git://github.com/danro/easing-js.git",
     "js-util": "git://github.com/ykob/js-util.git",
     "jstransformer-markdown-it": "^2.0.0",
+    "normalize-wheel": "^1.0.1",
     "ua-parser-js": "^0.7.19"
   }
 }
