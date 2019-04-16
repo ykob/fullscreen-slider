@@ -28,24 +28,48 @@ export default class FullscreenSlider {
 
     this.resize(resolution);
     this.on();
+
+    this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW);
   }
   goToPrev() {
     if (this.currentId === 0) return;
     this.previousId = this.currentId;
     this.currentId--;
     this.isAscend = false;
+    this.changeSection();
   }
   goToNext() {
     if (this.currentId >= this.maxId) return;
     this.previousId = this.currentId;
     this.currentId++;
     this.isAscend = true;
+    this.changeSection();
   }
   goToTarget(id) {
     if (this.currentId === id) return;
     this.isAscend = id > this.currentId;
     this.previousId = this.currentId;
     this.currentId = id;
+    this.changeSection();
+  }
+  changeSection() {
+    for (var i = 0; i < this.elmSection.length; i++) {
+      this.elmSection[i].classList.remove(
+        CLASSNAME_SHOW,
+        CLASSNAME_SHOW_ASCEND,
+        CLASSNAME_SHOW_DESCEND,
+        CLASSNAME_HIDE,
+        CLASSNAME_HIDE_ASCEND,
+        CLASSNAME_HIDE_DESCEND
+      )
+    }
+    if (this.isAscend) {
+      this.elmSection[this.previousId].classList.add(CLASSNAME_HIDE, CLASSNAME_HIDE_ASCEND);
+      this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW, CLASSNAME_SHOW_ASCEND);
+    } else {
+      this.elmSection[this.previousId].classList.add(CLASSNAME_HIDE, CLASSNAME_HIDE_DESCEND);
+      this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW, CLASSNAME_SHOW_DESCEND);
+    }
   }
   resize(resolution) {
     this.elmWrap.style = `width:${resolution.x}px; height:${resolution.y}px`

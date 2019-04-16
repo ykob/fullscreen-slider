@@ -1,3 +1,43 @@
 .p-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  &--01 {
 
+  }
+  &--02 {
+
+  }
+  &--03 {
+
+  }
+  &--04 {
+
+  }
+  &--05 {
+
+  }
+  &__in {
+    text-align: center;
+  }
+  &__header {
+
+  }
+
+  //
+  // Interaction
+  //
+  opacity: 0;
+  &.is-shown, &.is-hidden {
+    transition-duration: 1s;
+    transition-property: opacity, transform;
+  }
+  &.is-shown {
+    opacity: 1;
+  }
 }
