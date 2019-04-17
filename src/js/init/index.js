@@ -8,4 +8,13 @@ export default function() {
       y: window.innerHeight
     }
   );
+
+  window.addEventListener('resize', () => {
+    fsSlider.resize(
+      {
+        x: window.innerWidth,
+        y: window.innerHeight
+      }
+    );
+  });
 };
