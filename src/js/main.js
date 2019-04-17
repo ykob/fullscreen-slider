@@ -1,4 +1,4 @@
-require('@babel/polyfill');
+import "@babel/polyfill";
 
 import UaParser from 'ua-parser-js';
 import sleep from 'js-util/sleep';
