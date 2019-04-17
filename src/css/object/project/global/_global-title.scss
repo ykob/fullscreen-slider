@@ -1,5 +1,6 @@
 .p-global-title {
   position: absolute;
+  z-index: 10;
   line-height: 1;
   margin: 0;
   @include fontSizeAll(24, 24, 14);
