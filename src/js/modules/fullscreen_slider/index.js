@@ -30,6 +30,7 @@ export default class FullscreenSlider {
     this.on();
 
     this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW);
+    document.body.style = 'overscroll-behavior: none';
   }
   goToPrev() {
     if (this.currentId === 0) return;
