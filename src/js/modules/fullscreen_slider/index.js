@@ -29,8 +29,8 @@ export default class FullscreenSlider {
     this.resize(resolution);
     this.on();
 
-    this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW);
     document.body.style = 'overscroll-behavior: none';
+    this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW, CLASSNAME_SHOW_ASCEND);
   }
   goToPrev() {
     if (this.currentId === 0) return;
