@@ -26,7 +26,20 @@
     text-align: center;
   }
   &__header {
-
+    line-height: 1;
+    margin-top: 0;
+    @include fontSizeAll(48, 48, 32);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    @include l-more-than-mobile {
+      margin-bottom: 25px;
+    }
+    @include l-mobile {
+      margin-bottom: 15px;
+    }
+  }
+  p {
+    letter-spacing: 0.07em;
   }
 
   //

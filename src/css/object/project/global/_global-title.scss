@@ -1,6 +1,16 @@
 .p-global-title {
   position: absolute;
-  top: 0;
-  left: 0;
+  line-height: 1;
   margin: 0;
+  @include fontSizeAll(24, 24, 14);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  @include l-more-than-mobile {
+    top: 30px;
+    left: 30px;
+  }
+  @include l-mobile {
+    top: 15px;
+    left: 15px;
+  }
 }
