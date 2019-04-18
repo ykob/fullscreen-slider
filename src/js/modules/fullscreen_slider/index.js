@@ -1,15 +1,18 @@
 import normalizeWheel from 'normalize-wheel';
 
-const CLASSNAME_WRAP    = 'js-fullscreen-wrap';
-const CLASSNAME_SECTION = 'js-fullscreen-section';
-const CLASSNAME_PAGER   = 'js-fullscreen-pager';
-const CLASSNAME_BG      = 'js-fullscreen-bg';
-const CLASSNAME_SHOW = 'is-shown';
-const CLASSNAME_SHOW_ASCEND  = 'is-shown-asc';
-const CLASSNAME_SHOW_DESCEND = 'is-shown-desc';
-const CLASSNAME_HIDE = 'is-hidden';
-const CLASSNAME_HIDE_ASCEND  = 'is-hidden-asc';
-const CLASSNAME_HIDE_DESCEND = 'is-hidden-desc';
+const CLASSNAME_WRAP      = 'js-fullscreen-wrap';
+const CLASSNAME_SECTION   = 'js-fullscreen-section';
+const CLASSNAME_PAGER     = 'js-fullscreen-pager';
+const CLASSNAME_POINTER   = 'js-fullscreen-pager-pointer';
+const CLASSNAME_BG        = 'js-fullscreen-bg';
+const CLASSNAME_SHOW      = 'is-shown';
+const CLASSNAME_SHOW_ASC  = 'is-shown-asc';
+const CLASSNAME_SHOW_DESC = 'is-shown-desc';
+const CLASSNAME_HIDE      = 'is-hidden';
+const CLASSNAME_HIDE_ASC  = 'is-hidden-asc';
+const CLASSNAME_HIDE_DESC = 'is-hidden-desc';
+const CLASSNAME_ANIMATE   = 'has-animate';
+
 const INTERVAL_TO_FIRE_WHEEL = 1000;
 const BG_COLORS = [
   '#0fb4ae',
@@ -24,6 +27,7 @@ export default class FullscreenSlider {
     this.elmWrap = contents.querySelector(`.${CLASSNAME_WRAP}`);
     this.elmSection = contents.querySelectorAll(`.${CLASSNAME_SECTION}`);
     this.elmPager = contents.querySelector(`.${CLASSNAME_PAGER}`);
+    this.elmPagerPointers = contents.querySelectorAll(`.${CLASSNAME_POINTER}`);
     this.elmBg = contents.querySelector(`.${CLASSNAME_BG}`);
 
     this.currentId = 0;
@@ -35,13 +39,14 @@ export default class FullscreenSlider {
     this.touchStartY = 0;
     this.isTouchMoved = false;
 
+    // Initialize
     this.resize(resolution);
     this.on();
 
     document.body.style.overscrollBehavior = 'none';
     this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW);
-    this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW_ASCEND);
-    this.elmBg.classList.add('has-animate');
+    this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW_ASC);
+    this.elmBg.classList.add(CLASSNAME_ANIMATE);
     this.elmBg.style.backgroundColor = BG_COLORS[this.currentId];
   }
   goToPrev() {
@@ -68,22 +73,22 @@ export default class FullscreenSlider {
   changeSection() {
     for (var i = 0; i < this.elmSection.length; i++) {
       this.elmSection[i].classList.remove(CLASSNAME_SHOW);
-      this.elmSection[i].classList.remove(CLASSNAME_SHOW_ASCEND);
-      this.elmSection[i].classList.remove(CLASSNAME_SHOW_DESCEND);
+      this.elmSection[i].classList.remove(CLASSNAME_SHOW_ASC);
+      this.elmSection[i].classList.remove(CLASSNAME_SHOW_DESC);
       this.elmSection[i].classList.remove(CLASSNAME_HIDE);
-      this.elmSection[i].classList.remove(CLASSNAME_HIDE_ASCEND);
-      this.elmSection[i].classList.remove(CLASSNAME_HIDE_DESCEND);
+      this.elmSection[i].classList.remove(CLASSNAME_HIDE_ASC);
+      this.elmSection[i].classList.remove(CLASSNAME_HIDE_DESC);
     }
     if (this.isAscend) {
       this.elmSection[this.previousId].classList.add(CLASSNAME_HIDE);
-      this.elmSection[this.previousId].classList.add(CLASSNAME_HIDE_ASCEND);
+      this.elmSection[this.previousId].classList.add(CLASSNAME_HIDE_ASC);
       this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW);
-      this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW_ASCEND);
+      this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW_ASC);
     } else {
       this.elmSection[this.previousId].classList.add(CLASSNAME_HIDE);
-      this.elmSection[this.previousId].classList.add(CLASSNAME_HIDE_DESCEND);
+      this.elmSection[this.previousId].classList.add(CLASSNAME_HIDE_DESC);
       this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW);
-      this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW_DESCEND);
+      this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW_DESC);
     }
     this.elmBg.style.backgroundColor = BG_COLORS[this.currentId];
   }
