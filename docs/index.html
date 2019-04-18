@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>FullScreen Slider</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -12,20 +12,23 @@
     <link rel="icon" href="/fullscreen-slider/img/common/icon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/fullscreen-slider/img/common/app_icon.png">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="">
-    <meta property="og:site_name" content="">
+    <meta property="og:title" content="FullScreen Slider">
+    <meta property="og:site_name" content="FullScreen Slider">
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
     <meta property="og:url" content="https://ykob.github.io/fullscreen-slider/">
     <meta property="og:image" content="https://ykob.github.io/fullscreen-slider/img/common/ogp.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="">
+    <meta name="twitter:title" content="FullScreen Slider">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://ykob.github.io/fullscreen-slider/img/common/ogp.jpg">
   </head>
   <body>
     <div class="l-page" data-page-id="index">
-      <h1 class="p-global-title">FullScreen Slider</h1>
+      <div class="p-global-header">
+        <h1 class="p-global-title">FullScreen Slider</h1>
+        <div class="p-global-links"><a href="https://github.com/ykob/fullscreen-slider">View Source on GitHub</a></div>
+      </div>
       <div class="l-contents">
         <div class="p-sections-wrap js-fullscreen-wrap">
           <div class="p-section p-section--01 js-fullscreen-section">
@@ -59,7 +62,16 @@
             </div>
           </div>
         </div>
-        <div class="p-pager js-fullscreen-pager"></div>
+        <div class="p-pager js-fullscreen-pager">
+          <div class="p-pager__in">
+            <div class="p-pager__pointer js-fullscreen-pager-pointer"></div>
+            <div class="p-pager__pointer js-fullscreen-pager-pointer"></div>
+            <div class="p-pager__pointer js-fullscreen-pager-pointer"></div>
+            <div class="p-pager__pointer js-fullscreen-pager-pointer"></div>
+            <div class="p-pager__pointer js-fullscreen-pager-pointer"></div>
+            <div class="p-pager__bar"></div>
+          </div>
+        </div>
         <div class="p-background js-fullscreen-bg"></div>
       </div>
     </div>
