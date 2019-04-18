@@ -1,7 +1,65 @@
 .p-pager {
+  display: flex;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
   z-index: 100;
+  pointer-events: none;
+  @include l-more-than-mobile {
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    align-items: center;
+  }
+  @include l-mobile {
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    justify-content: center;
+  }
+  &__in {
+    position: relative;
+    pointer-events: auto;
+    @include l-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__bar {
+    position: absolute;
+    background-color: $color-text;
+    @include l-more-than-mobile {
+      width: 2px;
+      top: 21px;
+      bottom: 21px;
+      left: 21px;
+    }
+    @include l-mobile {
+      height: 2px;
+      bottom: 21px;
+      right: 21px;
+      left: 21px;
+    }
+  }
+  &__pointer {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    &:before {
+      width: 10px;
+      height: 10px;
+      content: '';
+      display: block;
+      border-radius: 50%;
+      background-color: $color-text;
+    }
+  }
+  //
+  // Interaction
+  //
+
 }
