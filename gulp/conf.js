@@ -1,4 +1,4 @@
-// 設定ファイル
+1// 設定ファイル
 // 対象パスやオプションを指定
 
 const DOMAIN = module.exports.DOMAIN = 'https://ykob.github.io';
