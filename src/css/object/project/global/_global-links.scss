@@ -1,0 +1,12 @@
+.p-global-links {
+  @include fontSizeAll(14, 14, 12);
+  a {
+    color: $color-text;
+  }
+  @include l-more-than-mobile {
+    margin-top: 15px;
+  }
+  @include l-mobile {
+    margin-top: 8px;
+  }
+}

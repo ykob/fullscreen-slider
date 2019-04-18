@@ -10,10 +10,10 @@
   left: 0;
   z-index: 10;
   @include l-more-than-mobile {
-    padding: 25px;
+    padding: 30px;
   }
   @include l-mobile {
-    padding: 15px;
+    padding: 20px;
   }
   &--01 {
 

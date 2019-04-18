@@ -1,0 +1,12 @@
+.p-global-header {
+  position: absolute;
+  z-index: 100;
+  @include l-more-than-mobile {
+    top: 30px;
+    left: 30px;
+  }
+  @include l-mobile {
+    top: 20px;
+    left: 20px;
+  }
+}
