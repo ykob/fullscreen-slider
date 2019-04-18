@@ -11,6 +11,7 @@ const CLASSNAME_SHOW_DESC = 'is-shown-desc';
 const CLASSNAME_HIDE      = 'is-hidden';
 const CLASSNAME_HIDE_ASC  = 'is-hidden-asc';
 const CLASSNAME_HIDE_DESC = 'is-hidden-desc';
+const CLASSNAME_CURRENT   = 'is-current';
 const CLASSNAME_ANIMATE   = 'has-animate';
 
 const INTERVAL_TO_FIRE_WHEEL = 1000;
@@ -39,13 +40,15 @@ export default class FullscreenSlider {
     this.touchStartY = 0;
     this.isTouchMoved = false;
 
-    // Initialize
     this.resize(resolution);
+  }
+  start() {
     this.on();
-
     document.body.style.overscrollBehavior = 'none';
     this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW);
     this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW_ASC);
+    this.elmPager.classList.add(CLASSNAME_ANIMATE);
+    this.elmPagerPointers[this.currentId].classList.add(CLASSNAME_CURRENT);
     this.elmBg.classList.add(CLASSNAME_ANIMATE);
     this.elmBg.style.backgroundColor = BG_COLORS[this.currentId];
   }
@@ -90,6 +93,8 @@ export default class FullscreenSlider {
       this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW);
       this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW_DESC);
     }
+    this.elmPagerPointers[this.previousId].classList.remove(CLASSNAME_CURRENT);
+    this.elmPagerPointers[this.currentId].classList.add(CLASSNAME_CURRENT);
     this.elmBg.style.backgroundColor = BG_COLORS[this.currentId];
   }
   resize(resolution) {
@@ -151,5 +156,15 @@ export default class FullscreenSlider {
     this.elmWrap.addEventListener('touchend', (e) => {
       this.isTouchMoved = false;
     }, false);
+
+    // For pager
+    // ======
+    for (var i = 0; i < this.elmPagerPointers.length; i++) {
+      const id = i;
+      this.elmPagerPointers[i].addEventListener('click', (e) => {
+        e.preventDefault();
+        this.goToTarget(id);
+      });
+    }
   }
 }

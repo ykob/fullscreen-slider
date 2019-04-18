@@ -17,4 +17,6 @@ export default function() {
       }
     );
   });
+
+  fsSlider.start();
 };
