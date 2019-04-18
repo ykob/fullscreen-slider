@@ -1,5 +1,6 @@
 .p-global-links {
   @include fontSizeAll(14, 14, 12);
+  letter-spacing: 0.08em;
   a {
     color: $color-text;
   }

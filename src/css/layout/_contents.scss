@@ -2,4 +2,5 @@
   line-height: 2;
   color: $color-text;
   @include fontSizeAll(14, 14, 12);
+  letter-spacing: 0.08em;
 }

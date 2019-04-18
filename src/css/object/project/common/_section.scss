@@ -47,7 +47,6 @@
     }
   }
   &__text {
-    letter-spacing: 0.07em;
     br {
       @include l-mobile {
         display: none;
