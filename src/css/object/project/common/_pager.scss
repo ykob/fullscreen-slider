@@ -95,7 +95,7 @@
         transition-duration: .2s;
         transition-property: width, height, background-color;
       }
-      &:hover:before,
+      &.is-over:before,
       &.is-current:before {
         width: 14px;
         height: 14px;
