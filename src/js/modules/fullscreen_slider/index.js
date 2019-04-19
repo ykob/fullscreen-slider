@@ -97,6 +97,10 @@ export default class FullscreenSlider {
     this.elmPagerPointers[this.currentId].classList.add(CLASSNAME_CURRENT);
     this.elmBg.style.backgroundColor = BG_COLORS[this.currentId];
   }
+  reset() {
+    this.elmWrap.style.width = 0;
+    this.elmWrap.style.height = 0;
+  }
   resize(resolution) {
     this.elmWrap.style.width = `${resolution.x}px`
     this.elmWrap.style.height = `${resolution.y}px`

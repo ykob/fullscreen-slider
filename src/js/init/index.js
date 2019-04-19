@@ -10,6 +10,7 @@ export default function() {
   );
 
   window.addEventListener('resize', () => {
+    fsSlider.reset();
     fsSlider.resize(
       {
         x: window.innerWidth,
