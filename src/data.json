@@ -9,7 +9,7 @@
       "id": "index",
       "title": "",
       "keywords": "",
-      "description": "",
+      "description": "This asset controls sections in a page. It resizes sections to fullscreen resolution and moves these individually by wheel/touch events.",
       "path": "/",
       "ogpImg": "ogp.jpg"
     }
