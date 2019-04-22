@@ -41,9 +41,10 @@ export default class FullscreenSlider {
     this.isTouchMoved = false;
 
     this.resize(resolution);
+    this.on();
   }
   start() {
-    this.on();
+    // Start the first animation.
     document.body.style.overscrollBehavior = 'none';
     this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW);
     this.elmSection[this.currentId].classList.add(CLASSNAME_SHOW_ASC);
@@ -74,6 +75,8 @@ export default class FullscreenSlider {
     this.changeSection();
   }
   changeSection() {
+    // Add/Remove the ClassName for change the current section and run the animation.
+    // It judges which direction going the next section from the previous section Ascend or Descend.
     for (var i = 0; i < this.elmSection.length; i++) {
       this.elmSection[i].classList.remove(CLASSNAME_SHOW);
       this.elmSection[i].classList.remove(CLASSNAME_SHOW_ASC);
@@ -98,14 +101,18 @@ export default class FullscreenSlider {
     this.elmBg.style.backgroundColor = BG_COLORS[this.currentId];
   }
   reset() {
+    // Remove styles of the wrapper element temporarily.
     this.elmWrap.style.width = 0;
     this.elmWrap.style.height = 0;
   }
   resize(resolution) {
+    // Resize the wrapper element to the argument resolution.
     this.elmWrap.style.width = `${resolution.x}px`
     this.elmWrap.style.height = `${resolution.y}px`
   }
   on() {
+    // Binding each events.
+
     // For wheel events
     // =====
     const wheel = (e) => {
