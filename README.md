@@ -12,7 +12,9 @@ https://ykob.github.io/fullscreen-slider/
 https://github.com/ykob/fullscreen-slider/blob/master/src/js/modules/fullscreen_slider/index.js  
 Like as below.
 
+```
 import FullscreenSlider from '../modules/fullscreen_slider/';
+```
 
 2. Create an instance and set wrapper element (ex: document) and 2D resolution object to arguments as below.
 
