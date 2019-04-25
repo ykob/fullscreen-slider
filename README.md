@@ -8,7 +8,15 @@ https://ykob.github.io/fullscreen-slider/
 
 ## Usage
 
-1. Import FullscreenSlider class.  
+1. You must install the necessary npm modules.  
+This class depends on below modules.  
+https://www.npmjs.com/package/normalize-wheel
+
+```
+npm i normalize-wheel --save
+```
+
+2. Import FullscreenSlider class.  
 https://github.com/ykob/fullscreen-slider/blob/master/src/js/modules/fullscreen_slider/index.js  
 Like as below.
 
@@ -16,7 +24,7 @@ Like as below.
 import FullscreenSlider from '../modules/fullscreen_slider/';
 ```
 
-2. Create an instance and set wrapper element (ex: document) and 2D resolution object to arguments as below.
+3. Create an instance and set wrapper element (ex: document) and 2D resolution object to arguments as below.
 
 ```
 const fsSlider = new FullscreenSlider(
@@ -28,7 +36,7 @@ const fsSlider = new FullscreenSlider(
 );
 ```
 
-3. Bind the "resize" event. You should run the "reset" method before running the "resize" method to set the resolution to the section elements correctly. Also, you should set an object that has window resolution to an argument of the "resize" method to resize the sections to full-screen size.
+4. Bind the "resize" event. You should run the "reset" method before running the "resize" method to set the resolution to the section elements correctly. Also, you should set an object that has window resolution to an argument of the "resize" method to resize the sections to full-screen size.
 
 ```
 window.addEventListener('resize', () => {
@@ -42,7 +50,7 @@ window.addEventListener('resize', () => {
 });
 ```
 
-4. Run the "start" method when you want to start the animation.
+5. Run the "start" method when you want to start the animation.
 
 ```
 fsSlider.start();
