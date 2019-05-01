@@ -36,7 +36,7 @@ const fsSlider = new FullscreenSlider(
 );
 ```
 
-4. Bind the "resize" event. You should run the "reset" method before running the "resize" method to set the resolution to the section elements correctly. Also, you should set an object that has window resolution to an argument of the "resize" method to resize the sections to full-screen size.
+4. Bind the `resize` event. You should run the `reset` method before running the `resize` method to set the resolution to the section elements correctly. Also, you should set an object that has window resolution to an argument of the "resize" method to resize the sections to full-screen size.
 
 ```
 window.addEventListener('resize', () => {
@@ -50,7 +50,7 @@ window.addEventListener('resize', () => {
 });
 ```
 
-5. Run the "start" method when you want to start the animation.
+5. Run the `start` method when you want to start the animation.
 
 ```
 fsSlider.start();
