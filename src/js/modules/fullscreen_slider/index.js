@@ -37,6 +37,7 @@ export default class FullscreenSlider {
     this.isAscend = true;
     this.wheelTimer = null;
     this.isWheeling = false;
+    this.touchStartX = 0;
     this.touchStartY = 0;
     this.isTouchMoved = false;
 
@@ -143,19 +144,23 @@ export default class FullscreenSlider {
     // For touch events
     // =====
     this.elmWrap.addEventListener('touchstart', (e) => {
+      this.touchStartX = e.touches[0].clientX;
       this.touchStartY = e.touches[0].clientY;
     }, false);
 
     this.elmWrap.addEventListener('touchmove', (e) => {
       if (this.isTouchMoved === true) return;
 
-      e.preventDefault();
-
+      const diffX = this.touchStartX - e.touches[0].clientX;
       const diffY = this.touchStartY - e.touches[0].clientY;
 
-      if (diffY < -20) {
+      if (Math.abs(diffX) > 20) {
+        return;
+      } else if (diffY < -20) {
+        e.preventDefault();
         this.goToPrev();
       } else if (diffY > 20) {
+        e.preventDefault();
         this.goToNext();
       }
 
